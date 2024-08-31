@@ -14,67 +14,63 @@ import ProtectedRoute from './components/Protected-route';
 
 const router = createBrowserRouter([
   {
-    element:<AppLayout/>,
-    children:[
+    element: <AppLayout />,
+    children: [
       {
-        path:'/',
-        element:<LandingPage />
+        path: "/",
+        element: <LandingPage />,
       },
       {
-        path:'/onboarding',
-        element:(
+        path: "/onboarding",
+        element: (
           <ProtectedRoute>
-             <Onboarding />
+            <Onboarding />
           </ProtectedRoute>
-         
-        )
+        ),
       },
       {
-        path:'/jobs',
-        element:(
+        path: "/jobs",
+        element: (
           <ProtectedRoute>
             <JobListing />
-           </ProtectedRoute> 
-        )
+          </ProtectedRoute>
+        ),
       },
       {
-        path:'/job/:id',
-        element:(
+        path: "/post-job",
+        element: (
           <ProtectedRoute>
-           <JobPage />
-           </ProtectedRoute> 
-        )
+            <PostJob />
+          </ProtectedRoute>
+        ),
       },
       {
-        path:'/post-job',
-        element:(
+        path: "/my-jobs",
+        element: (
           <ProtectedRoute>
-           <PostJob />
-           </ProtectedRoute> 
-        )
+            <MyJobs />
+          </ProtectedRoute>
+        ),
       },
       {
-        path:'/saved-job',
-        element:(
+        path: "/saved-jobs",
+        element: (
           <ProtectedRoute>
-           <SavedJobs />
-           </ProtectedRoute> 
-        )
+            <SavedJobs />
+          </ProtectedRoute>
+        ),
       },
       {
-        path:'/my-jobs',
-        element:(
+        path: "/job/:id",
+        element: (
           <ProtectedRoute>
-           <MyJobs />
-           </ProtectedRoute> 
-        )
-      }
-      
-    ]
+            <JobPage />
+          </ProtectedRoute>
+        ),
+      },
+    ],
   },
-  
-])
-
+]);
 function App() {
   return (
 
